@@ -1,2 +1,2 @@
 # Bal-Aveksha
-Online chatting client for SIH
+Online remote counselling client for SIH
