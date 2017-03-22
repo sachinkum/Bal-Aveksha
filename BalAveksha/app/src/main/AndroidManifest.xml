@@ -9,7 +9,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/first1"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -21,26 +21,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity android:name=".LoginActivity" />
         <!-- android:label="@string/title_activity_welcome" -->
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/title_Signup">
-
-        </activity>
+            android:label="@string/title_Signup"></activity>
         <activity android:name=".LoginScreen" />
         <activity
             android:name=".MainChild"
             android:label="@string/title_activity_main_child"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ChildNavbar"
-
-            >
-
-        </activity>
+        <activity android:name=".ChildNavbar"></activity>
+        <activity android:name=".Test"></activity>
     </application>
 
 </manifest>

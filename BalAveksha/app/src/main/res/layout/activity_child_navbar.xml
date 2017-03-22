@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"/>
 
 
-       <TextView
+      <!-- <TextView
            android:text="CHILDMAIN"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -26,6 +26,15 @@
            android:layout_gravity="center_vertical"
            android:textAlignment="center"
            android:textSize="24dp"  />
+-->
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/main_container"
+           >
+
+       </FrameLayout>
+
    </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -34,6 +43,7 @@
         app:menu="@menu/childnavbarmenu"
         android:layout_gravity="start"
         app:headerLayout="@layout/childnavigation_header"
+        android:id="@+id/navigation_child"
 
 
         >
