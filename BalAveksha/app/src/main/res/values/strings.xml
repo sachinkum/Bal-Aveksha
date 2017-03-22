@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">BalAveksha</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or Register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">username is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!--welcome Activity-->
+
+    <string name="title_activity_welcome">Home</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Food!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+
+    <string name="slide_2_title">Movie Tickets</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+
+    <!-- dropdown in register-->
+    <string name="title_Signup">Sign UP for Children</string>
+    <string-array name="problem_arrays">
+        <item>Stress</item>
+        <item>Mental Problem</item>
+        <item>Upset</item>
+    </string-array>
+
+
+    <!--Navigation drawer in MainChild-->
+
+    <string name="title_activity_main_child">MainChild</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    
+    <!--in childNAvbar navigation-->
+    
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+</resources>
