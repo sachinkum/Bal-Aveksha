@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^WebSite/', include('WebSite.urls')),
     url(r'^$', RedirectView.as_view(url='', permanent=False)),
+    url('^accounts/', include('django.contrib.auth.urls')),
 
 ]
