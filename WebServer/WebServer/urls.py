@@ -17,11 +17,19 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
 from django.views.generic import RedirectView
+from django.conf.urls import url
+from django.contrib import admin
+from rest_framework.urlpatterns import format_suffix_patterns
+from Authentications import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Authentications/', include('Authentications.urls')),
     url(r'^$', RedirectView.as_view(url='', permanent=False)),
     url('^accounts/', include('django.contrib.auth.urls')),
+    url(r'^getusers/$', views.UserList.as_view()),
 
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
