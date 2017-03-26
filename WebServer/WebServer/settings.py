@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Authentications.apps.AuthenticationsConfig',
+<<<<<<< HEAD
     'rest_framework',
+=======
+    'Counsellee.apps.CounselleeConfig'
+>>>>>>> server
 ]
 
 MIDDLEWARE = [

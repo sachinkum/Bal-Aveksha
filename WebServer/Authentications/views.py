@@ -8,6 +8,8 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views import generic
 from django.views.decorators.csrf import csrf_protect
+from Counsellee.models import CounselleeDetails
+from Counsellee.forms import CounselleeDetailsForm
 
 from Authentications.forms import RegistrationForm
 from . import models
@@ -20,8 +22,7 @@ from rest_framework import status
 
 
 def Index(request):
-    template = loader.get_template('Authentications/Index.html')
-    return HttpResponse(template.render(request))
+    return render(request, 'Authentications/Index.html', {'user': request.user})
 
 
 class RegisterUser(View):
@@ -46,7 +47,7 @@ class RegisterUser(View):
             user.save()
             return render(request, 'Authentications/Index.html', {'userName': User.username})
         else:
-            message = 'Wrong'
+            message = 'Something Went wrong please fill in correct details'
             form = self.form_class(None)
             return render(request, self.template_name, {'form': form, 'message' : message})
 
