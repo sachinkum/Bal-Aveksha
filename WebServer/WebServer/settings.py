@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.conf.global_settings import CSRF_COOKIE_DOMAIN
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -70,6 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'WebServer.wsgi.application'
+#CSRF_COOKIE_DOMAIN = None
 
 
 # Database
@@ -124,5 +127,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-
-LOGIN_REDIRECT_URL = '/'

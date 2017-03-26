@@ -23,8 +23,8 @@
       {% block sidebar %}
       <ul class="sidebar-nav">
           <!--<li><a href="{% url 'index' %}">Home</a></li>-->
-          <li><a href="{% url 'all_users' %}">All users</a></li>
-          <li><a href="">All emailIds</a></li>
+          <!--<li><a href="{% url 'all_users' %}">All users</a></li>-->
+          <!--<li><a href="">All emailIds</a></li>-->
       </ul>
       <ul class="sidebar-nav">
 
@@ -35,6 +35,7 @@
                 <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                <li><a href="{% url 'register' %}?next={{ request.path }}">Register</a></li>
             {% endif %}
         </ul>
      {% endblock %}
