@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home1"
+        android:title="Home"
+
+        ></item>
+
+
+    <item android:id="@+id/account1"
+        android:title="Account"
+        android:icon="@mipmap/ic_person_black_24dp"
+        ></item>
+
+    <item android:id="@+id/chatSession1"
+        android:title="Chat/Session"
+        android:icon="@mipmap/ic_settings_black_24dp"
+        ></item>
+    <item android:id="@+id/diagnosis1"
+        android:title="Diagnosis"></item>
+
+    <item android:id="@+id/about1"
+        android:title="About"></item>
+
+    <item android:id="@+id/logout1"
+        android:title="Logout"></item>
+
+
+
+</menu>

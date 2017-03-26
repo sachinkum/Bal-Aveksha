@@ -15,13 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".LoginActivity" />
         <!-- android:label="@string/title_activity_welcome" -->
         <activity
@@ -32,8 +26,20 @@
             android:name=".MainChild"
             android:label="@string/title_activity_main_child"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ChildNavbar"></activity>
-        <activity android:name=".Test"></activity>
+        <activity android:name=".ChildNavbar" />
+        <activity android:name=".Test" />
+        <activity android:name=".CounsellerNavbar">
+
+        </activity>
+        <activity android:name=".SplashScreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
