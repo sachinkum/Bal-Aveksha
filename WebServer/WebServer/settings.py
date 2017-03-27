@@ -40,11 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Authentications.apps.AuthenticationsConfig',
-<<<<<<< HEAD
     'rest_framework',
-=======
     'Counsellee.apps.CounselleeConfig'
->>>>>>> server
 ]
 
 MIDDLEWARE = [
@@ -133,3 +130,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'

@@ -1,10 +1,11 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from Counsellee.models import CounselleeDetails
+from datetime import date
 
 
 class CounselleeDetailsForm(forms.ModelForm):
-    gender = forms.ChoiceField(choices=['Male', 'Female', 'Other'])
+    dateOfBirth = forms.DateField()
 
     class Meta:
         model = CounselleeDetails

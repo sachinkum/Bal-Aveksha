@@ -8,9 +8,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views import generic
 from django.views.decorators.csrf import csrf_protect
-from Counsellee.models import CounselleeDetails
-from Counsellee.forms import CounselleeDetailsForm
-
+from django.contrib.auth import authenticate, login
 from Authentications.forms import RegistrationForm
 from . import models
 from django.contrib.auth.models import User
@@ -19,6 +17,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from Counsellee import urls
 
 
 def Index(request):
@@ -37,38 +36,54 @@ class RegisterUser(View):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            user = User.objects.create_user(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password1'],
-                email=form.cleaned_data['email'],
-                first_name=form.cleaned_data['first_name'],
-                last_name=form.cleaned_data['last_name']
-            )
+            user = form.save(commit=False)
+
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            email = form.cleaned_data['email']
+            first_name=form.cleaned_data['first_name']
+            last_name=form.cleaned_data['last_name']
+            user.set_password(password)
             user.save()
-            return render(request, 'Authentications/Index.html', {'userName': User.username})
+
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return render(request, 'Profile/profileRedirect.html', {'username': username})
+                else:
+                    return render(request, self.template_name, {'form': form, 'message': 'Could not activate'})
+            else:
+                return render(request, self.template_name, {'form': form, 'message': 'Could not login'})
+
         else:
             message = 'Something Went wrong please fill in correct details'
             form = self.form_class(None)
-            return render(request, self.template_name, {'form': form, 'message' : message})
+            return render(request, self.template_name, {'form': form, 'message': message})
 
 
 @csrf_protect
 def register_success(request):
     return render(request, 'Authentications/Index.html')
 
-
-class UserList(APIView):
-    """
-    List all albums, or create a new album.
-    """
-    def get(self, request, format=None):
-        user = User.objects.all()
-        serializer = UserSerializer(user, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, format = None):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#
+# class UserList(APIView):
+#     """
+#     List all albums, or create a new album.
+#     """
+#     # def get(self, request, format=None):
+#     #     user = User.objects.all()
+#     #     serializer = UserSerializer(user, many=True)
+#     #     return Response(serializer.data)
+#
+#     def get(self, request, format = None):
+#         serializer=UserSerializer(data=request.data)
+#  #        serializer = UserSerializer(data=request.data)
+#   #       if serializer.is_valid():
+#              #serializer.save()
+#         user = authenticate(username="arjun1234", password="123456")
+#         if user is not None:
+#             return Response(user, status=status.HTTP_200_OK)
+#         else:
+#             return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
