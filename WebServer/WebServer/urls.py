@@ -23,6 +23,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from Authentications import views
 
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Authentications/', include('Authentications.urls')),
