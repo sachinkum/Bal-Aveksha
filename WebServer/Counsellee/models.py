@@ -13,8 +13,3 @@ class CounselleeDetails(models.Model):
     gender = models.CharField(max_length=6)
     problem = models.CharField(max_length=100)
     description = models.TextField()
-
-    def calculate_age(self):
-        today = date.today()
-        self.age = today.year - self.dateOfBirth.year - ((today.month, today.day) < (self.dateOfBirth.month, self.dateOfBirth.day))
-

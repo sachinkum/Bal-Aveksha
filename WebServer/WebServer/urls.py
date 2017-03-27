@@ -26,13 +26,10 @@ from Authentications import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Authentications/', include('Authentications.urls')),
+    url(r'^Counsellee/', include('Counsellee.urls')),
     url(r'^$', RedirectView.as_view(url='', permanent=False)),
     url('^accounts/', include('django.contrib.auth.urls')),
-<<<<<<< HEAD
-    url(r'^getusers/$', views.UserList.as_view()),
-
-=======
->>>>>>> server
+    # url(r'^getusers/$', views.UserList.as_view()),
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+# urlpatterns = format_suffix_patterns(urlpatterns)
