@@ -31,6 +31,15 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ),
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +51,9 @@ INSTALLED_APPS = [
     'Authentications.apps.AuthenticationsConfig',
     'rest_framework',
     'Counsellee.apps.CounselleeConfig',
-    'Counsellor.apps.CounsellorConfig'
+    'Counsellor.apps.CounsellorConfig',
+    'rest_framework.authtoken',
+    'djoser'
 ]
 
 MIDDLEWARE = [
