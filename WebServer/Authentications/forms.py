@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 from django.utils.translation import ugettext_lazy as _
+from verified_email_field.forms import VerifiedEmailField
 
 
 class RegistrationForm(forms.ModelForm):

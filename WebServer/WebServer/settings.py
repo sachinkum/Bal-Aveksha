@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Authentications.apps.AuthenticationsConfig',
     'rest_framework',
-    'Counsellee.apps.CounselleeConfig'
+    'Counsellee.apps.CounselleeConfig',
+    'Counsellor.apps.CounsellorConfig'
 ]
 
 MIDDLEWARE = [
