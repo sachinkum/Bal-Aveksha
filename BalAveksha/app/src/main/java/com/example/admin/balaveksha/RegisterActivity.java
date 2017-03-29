@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
 **/
 
     }
-/**
+
     public void radioButtonClicked(View view) {
 
         // Is the button now checked?
@@ -60,6 +60,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
 
-    }**/
+    }
 
 }

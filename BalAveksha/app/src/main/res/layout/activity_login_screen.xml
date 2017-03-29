@@ -4,38 +4,58 @@
     android:id="@+id/activity_login_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#fddece"
+
     tools:context="com.example.admin.balaveksha.LoginScreen"
     android:orientation="vertical"
     android:baselineAligned="false">
 
+    <include layout="@layout/child_actionbarhide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
     <TextView
-        android:text="Email"
+        android:text="EMAIL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4" />
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView4"
+        android:textStyle="normal|bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="?android:attr/colorControlNormal" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/editText7" />
 
     <TextView
-        android:text="Password"
+        android:text="PASSWORD"
         android:layout_width="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:id="@+id/textView6" />
+        android:id="@+id/textView6"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:textColor="?attr/colorControlNormal" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:id="@+id/editText8" />
 
@@ -44,7 +64,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:onClick="transferToChild"
+        android:background="#dc534c"
+        android:textColor="#ffffff"
+
         />
 
     <Button
@@ -52,7 +78,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:onClick="transferToRegister"
+        android:background="#dc534c"
+        android:textColor="#ffffff"
         />
 </LinearLayout>
 

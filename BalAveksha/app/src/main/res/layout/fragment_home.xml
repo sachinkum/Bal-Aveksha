@@ -2,17 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fddece"
     tools:context="com.example.admin.balaveksha.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home"
-        android:gravity="center"
-        android:textSize="34dp"
-        android:textStyle="bold"
 
-        />
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHAT/SESSION"
+            android:id="@+id/chatsession"
+            android:background="#dc534c"
+            android:textColor="#ffffff"
+            android:layout_marginTop="30dp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:onClick="transferToChatSession"
+            />
+
+
+
+</LinearLayout>
 </FrameLayout>

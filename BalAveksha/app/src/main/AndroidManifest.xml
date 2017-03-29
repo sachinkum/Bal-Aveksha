@@ -26,18 +26,28 @@
             android:name=".MainChild"
             android:label="@string/title_activity_main_child"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ChildNavbar" />
+        <activity android:name=".ChildNavbar"></activity>
         <activity android:name=".Test" />
-        <activity android:name=".CounsellerNavbar">
-
-        </activity>
+        <activity android:name=".CounsellerNavbar"></activity>
         <activity android:name=".SplashScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ChildSession"
+            android:label="ChildSession"
+            android:parentActivityName=".ChildNavbar"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ChildNavbar"
+
+                >
+
+            </meta-data>
+
 
         </activity>
     </application>
