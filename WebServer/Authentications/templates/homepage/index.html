@@ -9,71 +9,20 @@
 	<title>Bal Aveksha - Home</title>
 
 	<!-- Css file to be included -->
-
-	<link rel="stylesheet" href="css/normalize.css">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'homepage_files/css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'homepage_files/css/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'homepage_files/css/style_home.css' %}">
 	<!-- Js files to be included-->
 	<!-- Jquery to be included before bootstrap script -->
-	
-	<style>
-		.main_div{
-			text-align: center;
-			vertical-align: middle;
-		}
-		.header_div{
-			padding: 20% 10%;
-		}
-		a, a:hover{
-			text-decoration: none;
-		}
-		a:hover, a:active, a:hover:active, a:active:hover{
-			border-bottom: solid thick;
-			border-bottom-color: black;
-		}
-		.navigation_header{
-			background: url(images/bcg_large.jpg) no-repeat;
-			background-size: cover;
-		}
-		.mdl-menu__item{
-			text-align: justify;
-		}
-		.logo_image{
-			height: 40px;
-			max-height: 100%;
-		}
-		.navigation_header{
-					}
-		.navigation_header .mdl-layout__header .mdl-layout__header-row, .navigation_header .mdl-layout__header .mdl-layout__header-row .mdl-navigation .mdl-navigation__link{
-			color: black; !important
-		}
-		.modal-backdrop{
-			z-index: 0;
-		}
-		@media screen and (max-width:768px){
-			.main_div,.header_div{
-				height: 400px;
-				padding: 10% 10%;
-			}
-		}
-		
-		@media screen and (max-width:460px){
-			.main_div,.header_div{
-				padding: 80px 10px;
-			}
-			
-		}
-		@media screen and (min-width:768px){
-			.main_div,.header_div{
-				height: 70vh;
-				padding: 10% 15%;
-			}
-		}
-	</style>
+    <script src="{% static 'homepage_files/js/jquery-1.11.3.min.js' %}"></script>
+
+    <script src="{% static 'homepage_files/js/smoothscroll.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 <body>
 
@@ -83,7 +32,7 @@
 	<header class="mdl-layout__header mdl-layout__header--transparent mdl-layout--no-drawer-button">
 		<div class="mdl-layout__header-row">
 			<!-- Logo-->
-			<span class="mdl-layout__title"><img class="img-responsive logo_image" src="images/logo.png" alt="Bal Aveksha"></span>
+			<span class="mdl-layout__title"><img class="img-responsive logo_image" src="{% static 'homepage_files/images/logo.png' %}" alt="Bal Aveksha"></span>
 			<div class="mdl-layout-spacer"></div>
 			<nav class="mdl-navigation">
         		<a id="home" class="mdl-navigation__link" href=""><span class="material-icons">home</span>&nbsp;Home</a>
@@ -114,7 +63,7 @@
     	<div class="container">
       		<div class="row">
         		<div class="col-xs-12" style="background-color: rgba(255,255,255,0.7)">
-          			<h1 id="landing_logo" class="text-center" style="align-items: center;"><img src="images/logo_big.png" alt="Bal AVeksha" class="img-responsive" style="max-width: 70%; display: block; margin: auto;"></h1>
+          			<h1 id="landing_logo" class="text-center" style="align-items: center;"><img src="{% static 'homepage_files/images/logo_big.png' %}" alt="Bal AVeksha" class="img-responsive" style="max-width: 70%; display: block; margin: auto;"></h1>
         			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, dicta, cupiditate consequatur necessitatibus quos libero eius ipsum qui sit molestiae.</p>
         			<p>&nbsp;</p>
         			<p class="text-center">
@@ -173,13 +122,6 @@
 					</div>
 				</div>
 <!-- Scripts to be include for parallax design and smoothscrolling-->
-<script src="js/jquery-1.11.3.min.js"></script>
-
-<script> window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 <script>
 	$(document).ready(function(){
@@ -187,9 +129,9 @@
 	})
 	
 	$('.logo_image').hover(function(event){
-		$(this).attr("src","images/logo.gif");
+		$(this).attr("src","{% static 'homepage_files/images/logo.gif' %}");
 	}, function(event){
-		$(this).attr("src", "images/logo.png");
+		$(this).attr("src", "{% static 'homepage_files/images/logo.png' %}");
 	});
 	
 	$(window).on("resize", customResponse);
