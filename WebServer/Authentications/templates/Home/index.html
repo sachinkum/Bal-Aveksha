@@ -231,19 +231,16 @@
 		}
 	}
 	$('#login_button_modal').on('click',function(){
-		var $u = $('#username').val();
-		var $p = $('#password').val();
+		var $form = $('#login_form').serialize();
 		$.ajax({
-			url: "http://127.0.0.1:8000/auth/login/",
-			type: "POST",
+			url: '127.0.0.1:8000/auth/login/',
+			type: 'POST',
 			data:{
-				username:$u,
-				password:$p
+				$form
 			},	
 		})
 		.done(function(data){
-			
-			console.log(data);	
+			console.log(" login");	
 		})
 		.fail(function(data){ 
 			console.log(" fail");

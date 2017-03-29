@@ -24,13 +24,11 @@ from Authentications import views
 from rest_framework_jwt import views as jwt_views
 
 
-
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Authentications/', include('Authentications.urls')),
     url(r'^Counsellee/', include('Counsellee.urls')),
-    url(r'^$', RedirectView.as_view(url='', permanent=False)),
+    url(r'^$', views.homepageView),
     url('^accounts/', include('django.contrib.auth.urls')),
     url(r'^auth/', include('djoser.urls.authtoken')),
     url(r'^account/', include('djoser.urls')),

@@ -20,8 +20,11 @@ from rest_framework import status
 from Counsellee import urls
 
 
+def homepageView(request):
+    return render(request, 'homepage/index.html')
+
 def Index(request):
-    return render(request, 'Authentications/Index.html', {'user': request.user})
+    return render(request, 'Home/index.html', {'user': request.user})
 
 
 class RegisterUser(View):
