@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class ChildNavbar extends AppCompatActivity {
@@ -67,13 +68,17 @@ public class ChildNavbar extends AppCompatActivity {
 
 
                     case R.id.account:
-                        fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                        Intent intent2  = new Intent(getApplicationContext(), Profile.class);
+                        startActivity(intent2);
+
+
+                        /**fragmentTransaction=getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.main_container,new AccountFragment());
                         fragmentTransaction.commit();
                         getSupportActionBar().setTitle("Account");
                         item.setChecked(true);
                         mDrawerLayout.closeDrawers();
-
+                        **/
 
                         break;
 
@@ -127,6 +132,10 @@ public class ChildNavbar extends AppCompatActivity {
 
 
     }
+
+
+
+
 
     public void transferToChatSession(View view)
     {

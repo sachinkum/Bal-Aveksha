@@ -2,9 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fddece">
+    android:background="@drawable/welcome1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+
+
+    <!--<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -36,5 +39,5 @@
             android:textColor="#dc534c"
             android:textSize="@dimen/slide_desc" />
 
-    </LinearLayout>
+    </LinearLayout> -->
 </RelativeLayout>

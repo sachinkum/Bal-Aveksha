@@ -20,15 +20,15 @@
         <!-- android:label="@string/title_activity_welcome" -->
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/title_Signup"></activity>
+            android:label="@string/title_Signup" />
         <activity android:name=".LoginScreen" />
         <activity
             android:name=".MainChild"
             android:label="@string/title_activity_main_child"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ChildNavbar"></activity>
+        <activity android:name=".ChildNavbar" />
         <activity android:name=".Test" />
-        <activity android:name=".CounsellerNavbar"></activity>
+        <activity android:name=".CounsellerNavbar" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,17 +36,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChildSession"
+        <activity
+            android:name=".ChildSession"
             android:label="ChildSession"
-            android:parentActivityName=".ChildNavbar"
-            >
+            android:parentActivityName=".ChildNavbar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChildNavbar"
+                android:value=".ChildNavbar" />
+        </activity>
+        <activity android:name=".Profile">
 
-                >
 
-            </meta-data>
 
 
         </activity>
