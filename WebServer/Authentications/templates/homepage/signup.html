@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>Get Started!!</title>
 
-    {% load staticfile %}
-    <script src="{% static 'homepage_files/js/jquery-1.11.3.min.js' %}"></script>
-
+    {% load staticfiles %}
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+		
 </head>
 <body>
     <form id="reg_form" action="">
@@ -19,13 +22,24 @@
     </form>
     <script>
         var $form = $('#reg_form');
-        $form.action('submit',function(){
-            $ajax({
+        $('submit').on('click',function(){
+            this.preventDefault();
+            $.ajax({
+                url: 'http://127.0.0.1:8000/auth/register/',
                 type: 'POST',
                 data: $form.serialize(),
+                dataProcess: false,
+                fail: function (data) {
+                    console.log(data);
 
-            });
-        })
+                }
+            })
+                .done(function(data){
+                    console.log(data);
+                    alert("sign up success! login to continue.");
+                    window.href("http://127.0.0.1:8000/");
+                });
+        });
     </script>
 </body>
 </html>

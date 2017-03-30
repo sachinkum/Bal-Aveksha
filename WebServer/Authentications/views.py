@@ -44,7 +44,7 @@ def signupView(request):
     URL: '/signup'
     Opens Sign Up Page
     '''
-    return render(request, 'homepage/index.html')
+    return render(request, 'homepage/signup.html')
 
 
 def Index(request):
