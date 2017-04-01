@@ -42,9 +42,7 @@ class SetProfile(FormView):
                 address=form.cleaned_data.get('address'),
                 uid=form.cleaned_data.get('uid'),
                 phoneNo=form.cleaned_data.get('phoneNo'),
-                gender=form.cleaned_data.get('gender'),
-                problem=form.cleaned_data.get('problem'),
-                description=form.cleaned_data.get('description')
+                gender=form.cleaned_data.get('gender')
             )
             cleanedProfile.save()
             return render(self.request, 'Authentications/Index.html', {'userName': User.username})

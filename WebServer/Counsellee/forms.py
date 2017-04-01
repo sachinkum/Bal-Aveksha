@@ -9,4 +9,4 @@ class CounselleeDetailsForm(forms.ModelForm):
 
     class Meta:
         model = CounselleeDetails
-        fields = ['dateOfBirth', 'address', 'uid', 'phoneNo', 'gender', 'problem', 'description']
+        fields = ['dateOfBirth', 'address', 'uid', 'phoneNo', 'gender']

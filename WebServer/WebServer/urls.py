@@ -32,8 +32,7 @@ urlpatterns = [
     url('^accounts/', include('django.contrib.auth.urls')),
     url(r'^auth/', include('djoser.urls.authtoken')),
     url(r'^account/', include('djoser.urls')),
-    url(r'^auth/login/', jwt_views.obtain_jwt_token, name='auth'),
-    # url(r'^getusers/$', views.UserList.as_view()),
+    url(r'^auth/login/', jwt_views.obtain_jwt_token, name='auth')
 ]
 
 # urlpatterns = format_suffix_patterns(urlpatterns)

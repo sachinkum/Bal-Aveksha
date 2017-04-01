@@ -11,6 +11,4 @@ class CounselleeDetails(models.Model):
     uid = models.BigIntegerField()
     phoneNo = models.BigIntegerField()
     gender = models.CharField(max_length=6)
-    problem = models.CharField(max_length=100)
-    description = models.TextField()
     role = models.CharField(max_length=10, default='Counsellee')

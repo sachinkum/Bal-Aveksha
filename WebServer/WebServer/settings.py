@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'Counsellee.apps.CounselleeConfig',
     'Counsellor.apps.CounsellorConfig',
+    'Sessions.apps.SessionsConfig',
     'rest_framework.authtoken',
     'djoser'
 ]

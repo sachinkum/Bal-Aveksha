@@ -13,4 +13,6 @@ class CounsellorDetails(models.Model):
     gender = models.CharField(max_length=6)
     speciality = models.CharField(max_length=100)
     role = models.CharField(max_length=10, default='Counsellor')
+    isidle = models.BooleanField(default=True)
+    noOfSessions = models.IntegerField(default=0)
 

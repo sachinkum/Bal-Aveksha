@@ -10,6 +10,7 @@ from django.views import generic
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login
 from Authentications.forms import RegistrationForm
+from Counsellor.models import CounsellorDetails
 from . import models
 from django.contrib.auth.models import User
 from Authentications.serializers import UserSerializer
@@ -18,9 +19,25 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from Counsellee import urls
+from datetime import date
+from Sessions.models import SessionModel
 
 
 def homepageView(request):
+    today = date.today()
+
+    completedSessions = SessionModel.objects.filter(requestedDate__lte=today)
+    for sessions in completedSessions:
+        sessions.isCompleted = True
+        sessions.save()
+
+    idleCounsellors = CounsellorDetails.objects.filter(nextCounsellingDate__lte=today)
+    for counsellors in idleCounsellors:
+        counsellors.isidle = True
+        counsellors.noOfSessions+=1
+        counsellors.nextCounsellingDate = None
+        counsellors.save()
+
     return render(request, 'homepage/index.html')
 
 def Index(request):
