@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fddece"
+    android:background="@drawable/register"
 
     tools:context="com.example.admin.balaveksha.RegisterActivity">
 
@@ -37,6 +37,8 @@
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:paddingTop="20dp"
+
+
                 >
 
                 <AutoCompleteTextView

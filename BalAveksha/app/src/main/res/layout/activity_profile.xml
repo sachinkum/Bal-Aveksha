@@ -11,6 +11,8 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:fillViewport="false"
+    android:background="@drawable/profile"
+
 
     >
 

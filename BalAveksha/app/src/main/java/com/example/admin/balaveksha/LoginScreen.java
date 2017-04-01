@@ -30,10 +30,10 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
         super.onCreate(savedInstanceState);
 
-        Toolbar mToolbar =(Toolbar) findViewById(R.id.nav_actionbarhide);
-        setSupportActionBar(mToolbar);
+//        Toolbar mToolbar =(Toolbar) findViewById(R.id.nav_actionbarhide);
+//        setSupportActionBar(mToolbar);
 
-        getSupportActionBar().setTitle("LOG IN");
+//        getSupportActionBar().setTitle("LOG IN");
 
         mUnameView = (AutoCompleteTextView) findViewById(R.id.editUName);
         mPasswordView = (AutoCompleteTextView) findViewById(R.id.editPassword);
@@ -50,10 +50,17 @@ public class LoginScreen extends AppCompatActivity {
 
                 final String Uname = mUnameView.getText().toString();
                 final String Password = mPasswordView.getText().toString();
+                Intent intent = new Intent(LoginScreen.this, ChildNavbar.class);
+                LoginScreen.this.startActivity(intent);
+                finish();
 
+                /**
                 Response.Listener<String>responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+
+
 
                         try{
 
@@ -89,14 +96,15 @@ public class LoginScreen extends AppCompatActivity {
 
                     }
                 };
-
+               **/
+/**
                 LoginRequest loginRequest=new LoginRequest(Uname,Password,responseListener);
 
                 RequestQueue queue = Volley.newRequestQueue(LoginScreen.this);
 
                 queue.add(loginRequest);
 
-
+**/
 
             }
         });
