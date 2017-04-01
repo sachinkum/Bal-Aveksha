@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#fddece"
 
     tools:context="com.example.admin.balaveksha.RegisterActivity">
 
@@ -30,33 +31,242 @@
            >
 
 
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="First Name"
-                android:id="@+id/FName"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="20dp"
-                />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp"
+                >
 
+                <AutoCompleteTextView
+                    android:id="@+id/editFName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:inputType="text" />
+
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/editLName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:inputType="text" />
+
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/editEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email-Id"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:inputType="text" />
+
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/editUName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:inputType="text" />
+
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/editPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:inputType="text" />
+
+
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <!--
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="First Name"
+                android:ems="14"
+                android:layout_marginLeft="33dp"
+                
+                android:id="@+id/editFName"
+                android:layout_marginTop="30dp"
+
+                ></EditText>
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:ems="10"
-                android:layout_marginRight="20dp"
-                
-                android:id="@+id/editFName"
-                android:layout_marginTop="20dp"
+                android:hint="Last Name"
+                android:ems="14"
+                android:layout_marginLeft="35dp"
 
+                android:id="@+id/editLName"
+                android:layout_marginTop="25dp"
+
+                ></EditText>
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:inputType="textEmailAddress"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="25dp"
+                android:hint="Email-ID"
+                android:ems="14"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Username"
+                android:ems="14"
+                android:layout_marginLeft="35dp"
+
+                android:id="@+id/editUName"
+                android:layout_marginTop="25dp"
+
+                ></EditText>
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:inputType="textPassword"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="35dp"
+                android:ems="14"
+                android:hint="Password"
+                />
+-->
+           <!-- <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dob"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:ems="14"
+                android:inputType="date"
+                android:hint="D.O.B"
                 />
 
+           <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/radiogroup"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="20dp">
+
+                <RadioButton
+                    android:text="Male"
+                    android:id="@+id/radioMale"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:onClick="radioButtonClicked"
+                    android:textSize="16dp"
+                    android:textStyle="normal"
+                    />
+                <RadioButton
+                    android:text="Female"
+                    android:id="@+id/radioFemale"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:onClick="radioButtonClicked"
+                    android:textSize="16dp"
+                    />
+            />
+
+            </RadioGroup>
+
+            -->
 
 
-
-
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTER"
+                android:id="@+id/register"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:onClick="transferToRegister"
+                android:textStyle="normal"
+                android:background="#dc534c"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#ffffff"
+                />
         </LinearLayout>
 
 

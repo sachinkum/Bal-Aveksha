@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:background="@color/bg_screen1">
+        android:background="#dc534c">
 
         <TextView
             android:text="Header Child Navigation"

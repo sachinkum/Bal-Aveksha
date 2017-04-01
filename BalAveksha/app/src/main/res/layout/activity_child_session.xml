@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_child_session"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.balaveksha.ChildSession">
+
+    <include layout="@layout/child_actionbarhide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text Messaging"
+        android:id="@+id/textmsg"
+        android:background="#dc534c"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Video Conferencing"
+        android:id="@+id/videoconfc"
+        android:background="#dc534c"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Audio Conferencing"
+        android:id="@+id/audioconfc"
+        android:background="#dc534c"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        />
+</LinearLayout>
