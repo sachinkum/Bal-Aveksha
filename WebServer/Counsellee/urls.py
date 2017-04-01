@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     url(r'^profile/$', views.SetProfile.as_view(), name='profile'),
+    url(r'^dashboard/', views.dashboardView, name='userDashboard')
     ]

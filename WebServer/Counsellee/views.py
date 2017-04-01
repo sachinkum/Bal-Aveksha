@@ -1,31 +1,78 @@
 from datetime import date
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, render_to_response, redirect
-from django.contrib.auth.models import User
-from django.template import RequestContext
-from django.template import loader
-from django.urls import reverse_lazy
-from django.views import View
-from django.views import generic
-from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth import authenticate
+from django.shortcuts import render
 from django.views.generic import FormView
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-from Authentications.forms import RegistrationForm
 from Counsellee.forms import CounselleeDetailsForm
-from . import models
 from django.contrib.auth.models import User
-from Authentications.serializers import UserSerializer
-from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.parsers import JSONParser
 from Counsellee.models import CounselleeDetails
+from Counsellee.serializers import CounselleeDetailsSerializer
 
 
-class SetProfile(FormView):
+@api_view(['GET'])
+@authentication_classes((TokenAuthentication, JSONWebTokenAuthentication))
+@permission_classes((IsAuthenticated,))
+def dashboardView(request):
+    '''
+    URL: '/dashboard/'
+    Opens User Dashboard if user is authenticated
+             otherwise responds with HTTP_401_UNAUTHORIZED
+    '''
+    content = {
+        'user': request.user,  # `django.contrib.auth.User` instance.
+        'auth': request.auth  # None
+    }
+    if content['auth'] is not None:
+        return render(request, 'homepage/index.html', content)
+    else:
+        return Response(request, status.HTTP_401_UNAUTHORIZED)
+
+class SetProfile(APIView):
+    '''
+    retrieves a counsellee profile or sets/update profile 
+    '''
+
+    permission_classes = IsAuthenticated
+    serializer_class = CounselleeDetailsSerializer
+
+    def get(self, request):
+
+        '''
+        
+        :param request: 
+        :return: 
+            status: HTTP_200_OK if existing details found
+                    HTTP_404_NOT_FOUND if details not found
+        '''
+        try:
+            counsellee = CounselleeDetails.objects.get(username=request.user.username)
+        except CounselleeDetails.DoesNotExist:
+            return Response(request,status.HTTP_404_NOT_FOUND)
+        serializer = CounselleeDetailsSerializer(counsellee)
+        return Response(request,serializer.data,status.HTTP_200_OK)
+
+    def post(self, request):
+        '''
+        
+        :param request: 
+        :return:
+            status: HTTP_200_OK if requested data is valid
+                    HTTP_400_BAD_REQUEST if data not valid
+        '''
+        deserializer = CounselleeDetailsSerializer(data=request.data)
+        if deserializer.is_valid():
+            deserializer.save()
+            return Response(request, status.HTTP_200_OK)
+        return Response(request, status.HTTP_400_BAD_REQUEST)
+
+
+class ASetProfile(FormView):
     form_class = CounselleeDetailsForm
     template_name = 'Profile/setProfile.html'
 
@@ -50,7 +97,3 @@ class SetProfile(FormView):
             return render(self.request, 'Authentications/Index.html', {'userName': User.username})
         else:
             return render(self.request, self.template_name, {'form': form, 'message': 'Something went Wrong'})
-
-
-
-

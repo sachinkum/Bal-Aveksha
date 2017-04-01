@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Authentications/', include('Authentications.urls')),
     url(r'^Counsellee/', include('Counsellee.urls')),
+    url(r'^signup$', views.signupView),
+    # url(r'^Counsellor/',include('Counsellor.urls')),
     url(r'^$', views.homepageView),
     url('^accounts/', include('django.contrib.auth.urls')),
     url(r'^auth/', include('djoser.urls.authtoken')),
