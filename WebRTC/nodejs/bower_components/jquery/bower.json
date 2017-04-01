@@ -1,0 +1,22 @@
+{
+  "name": "jquery",
+  "main": "dist/jquery.js",
+  "license": "MIT",
+  "ignore": [
+    "package.json"
+  ],
+  "keywords": [
+    "jquery",
+    "javascript",
+    "browser",
+    "library"
+  ],
+"install": {
+    "path": {
+      "js": "/static/js/libs/{name}"
+    }
+  },
+  "sources": {
+    "jquery": "bower_components/jquery/dist/*min*"
+  }
+}
