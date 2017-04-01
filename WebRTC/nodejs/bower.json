@@ -1,0 +1,20 @@
+{
+  "name": "sachin",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sachin Kumar <sachinkum@users.noreply.github.com>"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
