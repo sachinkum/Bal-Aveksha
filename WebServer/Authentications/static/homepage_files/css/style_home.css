@@ -1,0 +1,52 @@
+		.main_div{
+			text-align: center;
+			vertical-align: middle;
+		}
+		.header_div{
+			padding: 20% 10%;
+		}
+		a, a:hover{
+			text-decoration: none;
+		}
+		a:hover, a:active, a:hover:active, a:active:hover{
+			border-bottom: solid thick;
+			border-bottom-color: black;
+		}
+		.navigation_header{
+			background: url(../images/bcg_large.jpg) no-repeat;
+			background-size: cover;
+		}
+		.mdl-menu__item{
+			text-align: justify;
+		}
+		.logo_image{
+			height: 40px;
+			max-height: 100%;
+		}
+		.navigation_header{
+					}
+		.navigation_header .mdl-layout__header .mdl-layout__header-row, .navigation_header .mdl-layout__header .mdl-layout__header-row .mdl-navigation .mdl-navigation__link{
+			color: black; !important
+		}
+		.modal-backdrop{
+			z-index: 0;
+		}
+		@media screen and (max-width:768px){
+			.main_div,.header_div{
+				height: 400px;
+				padding: 10% 10%;
+			}
+		}
+
+		@media screen and (max-width:460px){
+			.main_div,.header_div{
+				padding: 80px 10px;
+			}
+
+		}
+		@media screen and (min-width:768px){
+			.main_div,.header_div{
+				height: 70vh;
+				padding: 10% 15%;
+			}
+		}

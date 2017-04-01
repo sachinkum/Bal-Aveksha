@@ -152,7 +152,7 @@
 								<h4 class="modal-title">Login</h4>
 							</div>
 							<div class="modal-body">
-								<form action="">
+								<form action="" id="login_form">
 									<div class="form-group row">
 										<div class="col col-sm-6">
 											<label class="" for="username">Username</label>
@@ -231,12 +231,24 @@
 		}
 	}
 	$('#login_button_modal').on('click',function(){
-		var username = $('username').val();
-		var password = $('password').val();
+		var $u = $('#username').val();
+		var $p = $('#password').val();
 		$.ajax({
-			url: ""	
+			url: "http://127.0.0.1:8000/auth/login/",
+			type: "POST",
+			data:{
+				username:$u,
+				password:$p
+			},	
 		})
-	})
+		.done(function(data){
+			
+			console.log(data);	
+		})
+		.fail(function(data){ 
+			console.log(" fail");
+		});
+	});
 </script>
 </body>
 </html>

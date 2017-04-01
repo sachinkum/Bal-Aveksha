@@ -21,14 +21,20 @@ from django.conf.urls import url
 from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
 from Authentications import views
+from rest_framework_jwt import views as jwt_views
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^Authentications/', include('Authentications.urls')),
     url(r'^Counsellee/', include('Counsellee.urls')),
-    url(r'^$', RedirectView.as_view(url='', permanent=False)),
+    url(r'^signup$', views.signupView),
+    # url(r'^Counsellor/',include('Counsellor.urls')),
+    url(r'^$', views.homepageView),
     url('^accounts/', include('django.contrib.auth.urls')),
+    url(r'^auth/', include('djoser.urls.authtoken')),
+    url(r'^account/', include('djoser.urls')),
+    url(r'^auth/login/', jwt_views.obtain_jwt_token, name='auth'),
     # url(r'^getusers/$', views.UserList.as_view()),
 ]
 
