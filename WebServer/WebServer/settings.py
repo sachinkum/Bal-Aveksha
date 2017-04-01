@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'Counsellee.apps.CounselleeConfig',
     'Counsellor.apps.CounsellorConfig',
     'rest_framework.authtoken',
-    'djoser'
+    'djoser',
+    'Sessions.apps.SessionsConfig'
 ]
 
 MIDDLEWARE = [
