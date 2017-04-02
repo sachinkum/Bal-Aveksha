@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+	<head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+      
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+	  
+	<style>
+		.home_div_c{
+			margin: auto;
+			
+		}
+		.new_session{
+			padding: 5%;
+			margin-top: 3%;
+			
+		}
+		.session_details{
+			padding: 5%;
+			margin-top:3%;
+			border-left: thick;
+			border-color: black;
+		}
+		
+		
+	</style>
+    
+    </head>
+    <body>
+  
+	
+	
+	
+  <nav class="light-blue lighten-2">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul style="padding-right: 5px" class="right hide-on-med-and-down">
+        <li><a class="profile_link" href="#"><i class="material-icons left">perm_identity</i>Profile</a></li>
+<!--        <li><a class="session_link" href="#">Sessions <i class="material-icons left">question_answer</i></a></li>-->
+<!--        <li><a href="collapsible.html">Javascript</a></li>-->
+        <li><button class="btn waves-effect waves-light pink logout_button" >Logout</button></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <div class="userView">
+      	<div class="background">
+{#        <img src="images/office.jpg">#}
+      	</div>
+      	<a href="#"><span class="white-text name">name</span></a>
+      	<a href="#"><span class="white-text email">email</span></a>
+    	</div>
+        <li><a href="#"><i class="material-icons left">perm_identity</i>Profile</a></li>
+<!--        <li><a href="#"><i class="material-icons left">question_answer</i>Sessions</a></li>-->
+<!--        <li><a href="collapsible.html">Javascript</a></li>-->
+        <hr><li><a class="logout_button" href="#">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="main-content">
+  	<div class="home_div_c row" >
+  		<div class="col s1 m1"></div>
+		<div class="session_details col s12 m7">
+	 	<div class="row">
+		 	<h4 class="col s12 m12">Sessions</h4>
+			 <ul class="col s12 m12 collapsible popout" data-collapsible="accordion">
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">picture_in_picture</i>First Session</div>
+				  <div class="collapsible-body">
+				  <p><span><i class="material-icons left">query_builder</i>Date and Time of Session</span>
+					  </p>
+				  <p><span style="font-weight: bolder">With Counsellor name</span></p>
+				  
+				  <p>On topic</p>
+				  
+				  
+				  </div>
+				</li>
+				<li>
+				  <div class="collapsible-header"><i class="material-icons">picture_in_picture</i>First</div>
+				  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+				</li>
+			  </ul>
+		</div>
+		</div>
+		<div class="new_session col s12 m3 z-depth-5">
+			 <div class="row">
+			 	<h4 class="col s12 m12">Need help?</h4>
+				<form class="col s12">
+				  <div class="row">
+					<div class="input-field col s12 m12">
+						<select id="prob">
+					  		<option value="" disabled selected>Choose your option</option>
+					  		<option value="1">Option 1</option>
+					  		<option value="2">Option 2</option>
+					  		<option value="3">Option 3</option>
+						</select>
+    					<label>Problem</label>
+ 			 		</div>
+ 			 		<div class="input-field col s12 m12">
+          				<i class="material-icons prefix">mode_edit</i>
+          				<textarea id="prob_desc" class="materialize-textarea"></textarea>
+          				<label for="prob_desc">Description</label>
+        			</div>
+        			<div class="col s8 m8">
+						<a id="session_req" class="waves-effect waves-light btn"><i style="font-size: 30px" class="material-icons right large">contact_phone</i>Submit</a>
+        			</div>
+				  </div>
+				</form>
+			  </div>
+        
+		</div>
+		
+  	</div>
+  </div>
+	
+    	
+    
+    <script>
+		$(document).ready(function(){
+            $('#session_req').on('click', function (e) {
+                e.preventDefault();
+                var token=' Token '+localStorage.getItem("token");
+                var user = localStorage.getItem("user");
+                var $prob = $('#prob').val();
+                var $desc = $('#prob_desc').val();
+                $.ajax({
+                    url:"http://127.0.0.1:8000/Sessions/requestSession/",
+                    type: "POST",
+                    headers:{'Authorization': token},
+                    data:{
+                      username:user,
+                        problem:$prob,
+                        description:$desc
+                    },
+                    processData: true,
+                    success: function (data) {
+                        console.log("booked");
+                    }
+                });
+            });
+
+
+
+			$(".button-collapse").sideNav();
+			$('select').material_select();
+		});
+
+	</script>	
+    	
+    </body>
+    
+</html>

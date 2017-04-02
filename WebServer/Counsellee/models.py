@@ -6,7 +6,7 @@ from datetime import date
 class CounselleeDetails(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     dateOfBirth = models.DateField()
-    age = models.IntegerField()
+    # age = models.IntegerField()
     address = models.CharField(max_length=1000)
     uid = models.BigIntegerField()
     phoneNo = models.BigIntegerField()
