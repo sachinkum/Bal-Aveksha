@@ -25,22 +25,14 @@ def homepageView(request):
 
 
 @api_view(['GET'])
-@authentication_classes((TokenAuthentication, JSONWebTokenAuthentication))
-@permission_classes((IsAuthenticated,))
-def setprofileView(request):
+@permission_classes([AllowAny])
+def setprofileView(request, username):
     '''
     URL: '/profile'
     Opens Set User Profile Page if user is logged in
              otherwise responds with HTTP_401_UNAUTHORIZED
     '''
-    content = {
-        'user': request.user,  # `django.contrib.auth.User` instance.
-        'auth': request.auth  # None
-    }
-    if content['auth'] is not None:
-        return render(request, 'profile/setprofile.html', content)
-    else:
-        return Response(request, status.HTTP_401_UNAUTHORIZED)
+    return render(request, 'profile/setprofile.html')
 
 
 def signupView(request):

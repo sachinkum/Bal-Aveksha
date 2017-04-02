@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
@@ -23,6 +24,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from Authentications import views
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework_jwt import views as jwt_views
+from django.conf.urls.static import static
+
 
 
 urlpatterns = [
@@ -31,15 +34,19 @@ urlpatterns = [
     url(r'^Counsellee/', include('Counsellee.urls')),
     url(r'^signup/', views.signupView),
     # url(r'^Counsellor/',include('Counsellor.urls')),
+    url(r'^(?P<username>[\w]+)/setprofile',views.setprofileView),
     url(r'^$', views.homepageView),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^auth/', include('djoser.urls.authtoken')),
     url(r'^account/', include('djoser.urls')),
     url(r'^auth/login/', jwt_views.obtain_jwt_token, name='auth'),
+    # url(r'^auth/logout/',)
     url(r'^Sessions/', include('Sessions.urls')),
     url(r'^userrole/', views.checkUser),
     url(r'^(?P<username>[\w]+)/counsellordashboard/', views.counsellorDashboardView),
     url(r'^(?P<username>[\w]+)/counselleedashboard/', views.counselleeDashboardView),
 ]
-
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # urlpatterns = format_suffix_patterns(urlpatterns)

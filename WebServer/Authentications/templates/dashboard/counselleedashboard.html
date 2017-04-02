@@ -147,13 +147,51 @@
                 });
             });
 
+            var token=' Token '+localStorage.getItem("token");
+            var user = localStorage.getItem("user");
 
+            $.ajax({
+                async:false,
+               url:"http://127.0.0.1:8000/Sessions/counselleeSession/",
+                type:"GET",
+                headers:{'Authorization': token},
+                data:{
+                   username:user,
+                },
+                processData: true,
+                success: function(data){
+                    SessionSetter(data);
+                }
+            });
+
+            function SessionSetter (data) {
+                console.log(data);
+                var sessions = $.parseJSON(data);
+{#                $.each()#}
+            }
 
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 		});
 
-	</script>	
+		$('.logout_button').on('click',function (event) {
+
+		    var token=' Token '+localStorage.getItem("token");
+{#            var user = localStorage.getItem("user");#}
+
+
+		    $.ajax({
+              url: "http://127.0.0.1:8000/auth/logout/",
+               type:"POST",
+               headers:{'Authorization': token},
+               success: function(data){
+                  localStorage.removeItem("token");
+                  window.location.href="http://127.0.0.1:8000/";
+               }
+           });
+        });
+
+	</script>
     	
     </body>
     

@@ -5,8 +5,6 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
-
-from Counsellee.forms import CounselleeDetailsForm
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response
