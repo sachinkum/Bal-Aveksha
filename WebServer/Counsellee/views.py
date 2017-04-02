@@ -71,29 +71,29 @@ class SetProfile(APIView):
             return Response(request, status.HTTP_200_OK)
         return Response(request, status.HTTP_400_BAD_REQUEST)
 
-
-class ASetProfile(FormView):
-    form_class = CounselleeDetailsForm
-    template_name = 'Profile/setProfile.html'
-
-    def form_valid(self, form):
-        if self.request.method == "POST":
-            dateOfBirth = form.cleaned_data.get('dateOfBirth')
-            today = date.today()
-            age = today.year - dateOfBirth.year - ((today.month, today.day) < (dateOfBirth.month, dateOfBirth.day))
-
-            cleanedProfile = CounselleeDetails.objects.create(
-                username=self.request.user,
-                dateOfBirth=form.cleaned_data.get('dateOfBirth'),
-                age=age,
-                address=form.cleaned_data.get('address'),
-                uid=form.cleaned_data.get('uid'),
-                phoneNo=form.cleaned_data.get('phoneNo'),
-                gender=form.cleaned_data.get('gender'),
-                problem=form.cleaned_data.get('problem'),
-                description=form.cleaned_data.get('description')
-            )
-            cleanedProfile.save()
-            return render(self.request, 'Authentications/Index.html', {'userName': User.username})
-        else:
-            return render(self.request, self.template_name, {'form': form, 'message': 'Something went Wrong'})
+#
+# class ASetProfile(FormView):
+#     form_class = CounselleeDetailsForm
+#     template_name = 'Profile/setProfile.html'
+#
+#     def form_valid(self, form):
+#         if self.request.method == "POST":
+#             dateOfBirth = form.cleaned_data.get('dateOfBirth')
+#             today = date.today()
+#             age = today.year - dateOfBirth.year - ((today.month, today.day) < (dateOfBirth.month, dateOfBirth.day))
+#
+#             cleanedProfile = CounselleeDetails.objects.create(
+#                 username=self.request.user,
+#                 dateOfBirth=form.cleaned_data.get('dateOfBirth'),
+#                 age=age,
+#                 address=form.cleaned_data.get('address'),
+#                 uid=form.cleaned_data.get('uid'),
+#                 phoneNo=form.cleaned_data.get('phoneNo'),
+#                 gender=form.cleaned_data.get('gender'),
+#                 problem=form.cleaned_data.get('problem'),
+#                 description=form.cleaned_data.get('description')
+#             )
+#             cleanedProfile.save()
+#             return render(self.request, 'Authentications/Index.html', {'userName': User.username})
+#         else:
+#             return render(self.request, self.template_name, {'form': form, 'message': 'Something went Wrong'})

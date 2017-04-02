@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Standard Meta -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+
+<!-- bootstrap
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+<!-- Site Properties -->
+		<title>Login Details</title>
+        {% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/reset.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/site.css">
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/container.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/grid.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/header.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/image.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/menu.css">
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/divider.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/segment.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/form.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/input.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/button.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/list.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/message.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/icon.css">
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/form.js"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/components/transition.js"></script>
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+		<style type="text/css">
+			body {
+		      	background: url("{% static 'signup_files/images/IMAGE BIG blur.jpg' %}") no-repeat;
+				background-size: cover;
+    			background-position: fixed;
+    		}
+	  		.try{ 
+    			width: 100%;
+    			height: 100%; 
+    		}	  
+   	 		.grid {
+      			height: 100%;
+    		}
+    		.image {
+      			margin-top: -100px;
+    		}
+    		.column {
+      			max-width: 450px;
+    		}
+		</style>
+
+	</head>
+	<body >
+		<div class="try">
+			<div class="ui middle aligned center aligned grid">
+				<div class="column">
+					<h2 class="ui black header">
+						<i class="fa fa-2x fa-user-plus" aria-hidden="true"></i>
+						<div>
+							Set Profile
+						</div>
+					</h2>
+					<form action="" class="ui large form" id="reg_form" name="registration">
+						<div class="ui stacked segment">
+							<div class="field">
+								<div class="fields">
+									<div class="five wide field">
+										<select class="ui fluid dropdown" name="gender" id="gender">
+											<option value="">Gender</option>
+											<option value="AL">Male</option>
+											<option value="AK">Female</option>
+											<option value="AK">Others</option>
+										</select>
+									</div>
+									<div class="four wide field">
+										<select class="ui fluid search dropdown" name="dob_date">
+											<option value="">DD</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
+											<option value="27">27</option>
+											<option value="28">28</option>
+											<option value="29">29</option>
+											<option value="30">30</option>
+											<option value="31">31</option>
+										</select>
+									</div>
+									<div class="eight wide field">
+										<div class="two fields">
+											<div class="field">
+												<select class="ui fluid search dropdown" name="dob_month">
+													<option value="">MM</option>
+													<option value="1">January</option>
+													<option value="2">February</option>
+													<option value="3">March</option>
+													<option value="4">April</option>
+													<option value="5">May</option>
+													<option value="6">June</option>
+													<option value="7">July</option>
+													<option value="8">August</option>
+													<option value="9">September</option>
+													<option value="10">October</option>
+													<option value="11">November</option>
+													<option value="12">December</option>
+												</select>
+											</div>
+											<div class="field">
+												<select class="ui fluid search dropdown" name="dob_year">
+													<option value="">YY</option>
+
+													<option value="1">2013</option>
+													<option value="2">2012</option>
+													<option value="3">2011</option>
+													<option value="4">2010</option>
+													<option value="5">2009</option>
+													<option value="6">2008</option>
+													<option value="7">2007</option>
+													<option value="8">2006</option>
+													<option value="9">2005</option>
+													<option value="10">2004</option>
+													<option value="11">2003</option>
+													<option value="12">2002</option>
+													<option value="13">2001</option>
+													<option value="14">2000</option>
+													<option value="15">1999</option>
+													<option value="16">1998</option>
+													<option value="17">1997</option>
+													<option value="18">1996</option>
+													<option value="19">1995</option>
+													<option value="20">1994</option>
+													<option value="21">1993</option>
+													<option value="22">1992</option>
+													<option value="23">1991</option>
+													<option value="24">1990</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="field ui left icon input">
+									<i class="credit card alternative icon"></i>
+									<input type="text" name="adhar_card_no" id="adhar_card_no" placeholder="Aadhar Card Number">
+								</div>
+								<div class="field ui left icon input">
+									<i class="marker icon"></i>
+									<input type="text" name="address" id="address" placeholder="Address">
+								</div>  
+							</div>
+							<div class="field">
+								<div class="three fields">
+									<div class="field">
+										<button class="ui inverted green button red circular ">
+											Cancel
+										</button>
+									</div>
+									<div class="field">
+										<button class="ui inverted gray button blue circular">
+											Reset
+										</button>
+									</div>
+									<div class="field">
+										<button id="form_submit" class="ui inverted green button circular">Submit</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ui error message"></div>
+					</form>
+					<div class="ui message">
+						Already a user? <a href="#"> login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+        <script src="{% static 'signup_files/js/validetta.min.js' %}"></script>
+		<script>
+		$(document).ready(function() {
+			$('#reg_form').validate({
+				rules: {
+					gender: "required",
+					dob_date: "required",
+					dob_month: "required",
+					dob_year: "required",
+					adhar_card_no: "required",
+                    address: "required",
+
+				},
+		
+				// Specify validation error messages
+				messages: {
+				    gender: "Required", dob_date: "Required", dob_month: "Required", dob_year: "Required", adhar_card_no: "Required", address: "Required"
+				}
+			});
+			
+			$('#form_submit').on('click', function(){
+				this.preventDefault();
+				$('#reg_form').valid();
+			});
+		});
+		
+	</script>
+	
+	</body>
+
+	
+	
+</html>

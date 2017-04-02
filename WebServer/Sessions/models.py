@@ -14,3 +14,4 @@ class SessionDetails(models.Model):
     description = models.TextField()
     reports = models.TextField()
 
+
