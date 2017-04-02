@@ -1,3 +1,4 @@
 from django.contrib import admin
+from Counsellee.models import CounselleeDetails
 
-# Register your models here.
+admin.site.register(CounselleeDetails)
