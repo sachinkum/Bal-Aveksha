@@ -63,6 +63,7 @@ def get_all_logged_in_users():
     # Query all logged in users based on id list
     return User.objects.filter(id__in=uid_list)
 
+
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication, JSONWebTokenAuthentication])
 @permission_classes([IsAuthenticated])
@@ -96,8 +97,8 @@ def allotCounsellor(request):
         allottedCounsellor.isidle = False
         allottedCounsellor.noofsessions += 1
         allottedCounsellor.save()
-        print("second cond")
-        return HttpResponse("Your session is booked")
+        print(newSession)
+        return HttpResponse(newSession)
         # return render(request,context={'session ID':newSession.sessionID})
 
 
@@ -109,8 +110,9 @@ def counselleeSessions(request):
         username = request.GET['username']
         u_id = User.objects.get(username=username).id
         query_set = SessionDetails.objects.filter(counselleeID_id=u_id)
-        serializer = SessionSerializer(query_set)
-        return JsonResponse(serializer.data)
+        serializer = SessionSerializer(query_set,many=True)
+        print(tuple(serializer.data))
+        return JsonResponse(tuple(serializer.data),safe=False)
 
 
 @csrf_exempt
@@ -122,4 +124,5 @@ def counsellorSessions(request):
         u_id = User.objects.get(username=username).id
         query_set = SessionDetails.objects.filter(counsellorID_id=u_id)
         serializer = SessionSerializer(query_set)
-        return JsonResponse(serializer.data)
+        print(tuple(serializer.data))
+        return JsonResponse(tuple(serializer.data))

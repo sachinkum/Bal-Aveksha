@@ -180,16 +180,7 @@
 {#                            json=$.parseJSON(data);#}
                             localStorage.setItem("token",data.auth_token);
 		                    var token=' Token '+localStorage.getItem("token");
-                            $.ajax({
-                                url:"http://127.0.0.1:8000/userrole/",
-                                type:"POST",
-                                dataType: 'json',
-                                headers: {'Authorization': token},
-                                 mimeType: 'application/json',
-                                data:{
-                                username:$u
-                                }
-                            });
+                            location.href="http://127.0.0.1:8000/"+$u+"/setprofile/";
                         }
                     });
                 });
