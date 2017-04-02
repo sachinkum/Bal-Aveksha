@@ -70,18 +70,17 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-                Intent i =new Intent(RegisterActivity.this,Profile.class);
-                i.putExtra("fname",Fname);
-                i.putExtra("lname",Lname);
-                i.putExtra("email",Email);
-                i.putExtra("username",Uname);
-                i.putExtra("password",Password);
+             //   Intent transferToProfile = new Intent(RegisterActivity.this,Profile.class);
 
-                startActivity(i);
-                finish();
+               // transferToProfile.putExtra("username",Uname);
+
+              //  RegisterActivity.this.startActivity(transferToProfile);
+              //  finish();
 
 
-/**
+
+
+
                 Response.Listener<String>responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -101,16 +100,16 @@ public class RegisterActivity extends AppCompatActivity {
                                 String Password=jsonResponse.getString("password");
 
 
-                                Intent intent = new Intent(RegisterActivity.this,Profile.class);
+                                Intent transferToProfile = new Intent(RegisterActivity.this,Profile.class);
 
-                                intent.putExtra("fname",Firstname);
-                                intent.putExtra("lname",Lastname);
-                                intent.putExtra("email",Emailid);
-                                intent.putExtra("username",Username);
-                                intent.putExtra("password",Password);
+                                transferToProfile.putExtra("fname",Firstname);
+                                transferToProfile.putExtra("lname",Lastname);
+                                transferToProfile.putExtra("email",Emailid);
+                                transferToProfile.putExtra("username",Username);
+                                transferToProfile.putExtra("password",Password);
 
 
-                                RegisterActivity.this.startActivity(intent);
+                                RegisterActivity.this.startActivity(transferToProfile);
                                 finish();
 
 
@@ -146,7 +145,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 queue.add(registerRequest);
 
-**/
+
 
             }
         });

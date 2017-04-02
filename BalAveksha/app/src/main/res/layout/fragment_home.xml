@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fddece"
+    android:background="@drawable/emergency"
     tools:context="com.example.admin.balaveksha.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -24,6 +24,20 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:onClick="transferToChatSession"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Frequently Asked Questions"
+            android:id="@+id/bfaqs"
+            android:background="#dc534c"
+            android:textColor="#ffffff"
+            android:layout_marginTop="30dp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:onClick="transferToFAQs"
             />
 
 
