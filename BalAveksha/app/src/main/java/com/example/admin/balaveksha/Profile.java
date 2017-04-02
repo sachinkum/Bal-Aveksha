@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +26,17 @@ public class Profile extends AppCompatActivity {
 
     private String Gender;
 
-    private AutoCompleteTextView mFnameView;
-    private AutoCompleteTextView mLnameView;
-    private AutoCompleteTextView mEmailView;
-    private AutoCompleteTextView mUnameView;
-    private AutoCompleteTextView mPasswordView;
+ //   private AutoCompleteTextView mFnameView;
+ //   private AutoCompleteTextView mLnameView;
+ //   private AutoCompleteTextView mEmailView;
+ //   private AutoCompleteTextView mUnameView;
+ //   private AutoCompleteTextView mPasswordView;
     private AutoCompleteTextView mDobView;
+    private AutoCompleteTextView mAgeView;
+    private AutoCompleteTextView mAddressView;
+    private AutoCompleteTextView mAdharView;
+    private AutoCompleteTextView mPhoneView;
+    private AutoCompleteTextView mDescriptionView;
 
 
 
@@ -54,55 +61,67 @@ public class Profile extends AppCompatActivity {
       //  final EditText etDOB=(EditText) findViewById(R.id.dob);
 
         final Button bSave=(Button) findViewById(R.id.save);
+        final TextView Uname=(TextView) findViewById(R.id.textusername);
 
-
-        mFnameView = (AutoCompleteTextView) findViewById(R.id.editFName);
-        mLnameView = (AutoCompleteTextView) findViewById(R.id.editLName);
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.editEmail);
-        mUnameView = (AutoCompleteTextView) findViewById(R.id.editUName);
-        mPasswordView = (AutoCompleteTextView) findViewById(R.id.editPassword);
+        //FnameView = (AutoCompleteTextView) findViewById(R.id.editFName);
+        //mLnameView = (AutoCompleteTextView) findViewById(R.id.editLName);
+        //mEmailView = (AutoCompleteTextView) findViewById(R.id.editEmail);
+        //mUnameView = (AutoCompleteTextView) findViewById(R.id.editUName);
+        //mPasswordView = (AutoCompleteTextView) findViewById(R.id.editPassword);
         mDobView= (AutoCompleteTextView) findViewById(R.id.dob);
 
-
-
-        Intent intent= getIntent();
-
-        String Firstname=intent.getStringExtra("fname");
-
-        String Lastname=intent.getStringExtra("lname");
-
-        String Email=intent.getStringExtra("email");
-
-        String Username=intent.getStringExtra("username");
-
-        String Password=intent.getStringExtra("password");
+        mAgeView= (AutoCompleteTextView) findViewById(R.id.editAge);
+        mAddressView= (AutoCompleteTextView) findViewById(R.id.editAddress);
+        mAdharView= (AutoCompleteTextView) findViewById(R.id.editAdhar);
+        mPhoneView= (AutoCompleteTextView) findViewById(R.id.editPhone);
+        mDescriptionView= (AutoCompleteTextView) findViewById(R.id.editDescription);
 
 
 
+        Intent registerintent= getIntent();
+
+      //  String Firstname=intent.getStringExtra("fname");
+
+      //  String Lastname=intent.getStringExtra("lname");
+
+//        String Email=intent.getStringExtra("email");
+
+        String Username=registerintent.getStringExtra("username");
+
+  //      String Password=intent.getStringExtra("password");
 
 
 
-        mFnameView.setText(Firstname);
-        mLnameView.setText(Lastname);
-        mEmailView.setText(Email);
-        mUnameView.setText(Username);
-        mPasswordView.setText(Password);
 
 
-/**
+
+       Uname.setText(Username);
+        //mLnameView.setText(Lastname);
+        //mEmailView.setText(Email);
+        //mUnameView.setText(Username);
+        //mPasswordView.setText(Password);
+
+
+
 
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                final String Fname = etFname.getText().toString();
-                final String Lname = etLname.getText().toString();
-                final String Email = etEmail.getText().toString();
-                final String Uname = etUname.getText().toString();
-                final String Password = etPassword.getText().toString();
-                final String DateofBirth = etDOB.getText().toString();
+            //    final String Fname = etFname.getText().toString();
+            //    final String Lname = etLname.getText().toString();
+            //    final String Email = etEmail.getText().toString();
+                final String Usrname = Uname.getText().toString();
+            //    final String Password = etPassword.getText().toString();
+                final String DateofBirth = mDobView.getText().toString();
                 final String gender="Gender";
+                final String Age = mAgeView.getText().toString();
+                final String Address = mAddressView.getText().toString();
+                final String Adhar = mAdharView.getText().toString();
+
+                final String Contact = mPhoneView.getText().toString();
+                final String Desc = mDescriptionView.getText().toString();
 
 
                 Response.Listener<String>responseListener = new Response.Listener<String>() {
@@ -117,8 +136,8 @@ public class Profile extends AppCompatActivity {
 
                             if(success){
 
-                                Intent intent = new Intent(Profile.this,ChildNavbar.class);
-                                Profile.this.startActivity(intent);
+                                Intent transferTochild = new Intent(Profile.this,ChildNavbar.class);
+                                Profile.this.startActivity(transferTochild);
                                 finish();
 
 
@@ -146,7 +165,7 @@ public class Profile extends AppCompatActivity {
                 };
 
 
-                SaveRequest saveRequest=new SaveRequest(Fname,Lname,Email,Uname,Password,DateofBirth,gender,responseListener);
+                SaveRequest saveRequest=new SaveRequest(Usrname,DateofBirth,gender,Age,Address,Adhar,Contact,Desc,responseListener);
 
                 RequestQueue queue = Volley.newRequestQueue(Profile.this);
 
@@ -157,7 +176,21 @@ public class Profile extends AppCompatActivity {
         });
 
 
-**/
+
+
+
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerProblem);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.problem_arrays, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+
+
+
     }
 
     public void radioButtonClicked(View view) {

@@ -30,10 +30,10 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
         super.onCreate(savedInstanceState);
 
-        Toolbar mToolbar =(Toolbar) findViewById(R.id.nav_actionbarhide);
-        setSupportActionBar(mToolbar);
+//        Toolbar mToolbar =(Toolbar) findViewById(R.id.nav_actionbarhide);
+//        setSupportActionBar(mToolbar);
 
-        getSupportActionBar().setTitle("LOG IN");
+//        getSupportActionBar().setTitle("LOG IN");
 
         mUnameView = (AutoCompleteTextView) findViewById(R.id.editUName);
         mPasswordView = (AutoCompleteTextView) findViewById(R.id.editPassword);
@@ -48,12 +48,22 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
+             //   Intent transfertochildFromlogin = new Intent(LoginScreen.this, ChildNavbar.class);
+             //   LoginScreen.this.startActivity(transfertochildFromlogin);
+             //   finish();
+
+
                 final String Uname = mUnameView.getText().toString();
                 final String Password = mPasswordView.getText().toString();
+
 
                 Response.Listener<String>responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+
+
 
                         try{
 
@@ -63,8 +73,8 @@ public class LoginScreen extends AppCompatActivity {
 
                             if(success){
 
-                                Intent intent = new Intent(LoginScreen.this, ChildNavbar.class);
-                                LoginScreen.this.startActivity(intent);
+                                Intent transfertochildFromlogin = new Intent(LoginScreen.this, ChildNavbar.class);
+                                LoginScreen.this.startActivity(transfertochildFromlogin);
                                 finish();
 
                             }
@@ -90,7 +100,11 @@ public class LoginScreen extends AppCompatActivity {
                     }
                 };
 
-                LoginRequest loginRequest=new LoginRequest(Uname,Password,responseListener);
+
+
+
+
+           LoginRequest loginRequest=new LoginRequest(Uname,Password,responseListener);
 
                 RequestQueue queue = Volley.newRequestQueue(LoginScreen.this);
 
@@ -107,8 +121,8 @@ public class LoginScreen extends AppCompatActivity {
 
     public void transferToRegister(View view) {
 
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
+        Intent transferToregister = new Intent(this, RegisterActivity.class);
+        startActivity(transferToregister);
 
     }
 

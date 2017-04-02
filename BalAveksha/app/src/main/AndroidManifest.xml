@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,19 +17,12 @@
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".LoginActivity" />
         <!-- android:label="@string/title_activity_welcome" -->
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_Signup" />
         <activity android:name=".LoginScreen" />
-        <activity
-            android:name=".MainChild"
-            android:label="@string/title_activity_main_child"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ChildNavbar" />
-        <activity android:name=".Test" />
-        <activity android:name=".CounsellerNavbar" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,12 +38,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ChildNavbar" />
         </activity>
-        <activity android:name=".Profile">
-
-
-
-
-        </activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".FAQstest"></activity>
     </application>
 
 </manifest>

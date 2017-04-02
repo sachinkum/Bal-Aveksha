@@ -5,6 +5,7 @@
     android:id="@+id/activity_child_session"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/emergency"
     tools:context="com.example.admin.balaveksha.ChildSession">
 
     <include layout="@layout/child_actionbarhide"

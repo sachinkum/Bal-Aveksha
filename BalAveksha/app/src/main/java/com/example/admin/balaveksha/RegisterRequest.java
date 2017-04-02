@@ -13,7 +13,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest{
 
 
-    private  static  final String REGISTER_REQUEST_URL= "";
+    private  static  final String REGISTER_REQUEST_URL= "http:///auth/register/";
     private Map<String,String>params;
 
     public RegisterRequest(String Fname, String Lname, String Email, String Username, String Password, Response.Listener<String>listener){
@@ -21,8 +21,8 @@ public class RegisterRequest extends StringRequest{
         super(Method.POST,REGISTER_REQUEST_URL,listener,null);
 
         params=new HashMap<>();
-        params.put("fname",Fname);
-        params.put("lname",Lname);
+        params.put("first_name",Fname);
+        params.put("last_name",Lname);
         params.put("email",Email);
         params.put("username",Username);
         params.put("password",Password);

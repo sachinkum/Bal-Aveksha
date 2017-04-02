@@ -117,10 +117,15 @@ public class ChildNavbar extends AppCompatActivity {
 
                         break;
 
-                    case R.id.logout:
-                        Intent intent = new Intent(getApplicationContext(), LoginScreen.class);
-                        startActivity(intent);
+                    case R.id.Faqs:
+                        Intent transferto  = new Intent(getApplicationContext(), FAQstest.class);
+                        startActivity(transferto);
 
+                        break;
+                    case R.id.logout:
+                        Intent transferlogout  = new Intent(getApplicationContext(), LoginScreen.class);
+                        startActivity(transferlogout);
+                        break;
 
                 }
 
@@ -142,6 +147,13 @@ public class ChildNavbar extends AppCompatActivity {
         Intent intent  = new Intent(this, ChildSession.class);
         startActivity(intent);
     }
+
+    public void transferToFAQs(View view)
+    {
+        Intent transferFAQs  = new Intent(this, FAQstest.class);
+        startActivity(transferFAQs);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

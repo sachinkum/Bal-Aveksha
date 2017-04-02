@@ -1,5 +1,8 @@
 package com.example.admin.balaveksha;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
@@ -11,8 +14,7 @@ import java.util.Map;
  */
 
 public class LoginRequest extends StringRequest {
-
-    private  static  final String LOGIN_REQUEST_URL= "";
+    private  static  final String LOGIN_REQUEST_URL= "Domain name/auth/login/";
     private Map<String,String> params;
 
     public LoginRequest(String Username, String Password, Response.Listener<String>listener){
